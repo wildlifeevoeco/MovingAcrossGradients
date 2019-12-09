@@ -1,0 +1,14 @@
+# Makefile for paper
+# Alec Robitaille
+
+RMD=$(shell find paper/*.Rmd)
+PDF=$(RMD:%.Rmd=%.pdf)
+
+all: $(PDF)
+	echo fin
+
+clean:
+	rm -f $(PDF)
+
+%.pdf: %.Rmd
+	Rscript -e 'rmarkdown::render("$<")'

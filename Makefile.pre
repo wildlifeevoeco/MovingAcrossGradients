@@ -1,0 +1,21 @@
+### Makefile
+# Alec Robitaille
+
+der = data/derived-data
+raw = data/raw-data
+
+
+## 3- Range Use
+T3 := $(der)/areas.Rds $(der)/blockidyr-verts.Rds $(der)/match-grid-verts.Rds $(der)/reg-pts1/reg-pts1.shp $(der)/reg-pts2/reg-pts2.shp $(der)/reg-pts3/reg-pts3.shp
+$(T3): R/3-RangeUse.R $(der)/cleaned-locs.Rds $(der)/first-passage-time.Rds
+	Rscript "R/3-RangeUse.R"
+
+## 2 - FPT
+T2 := $(der)/first-passage-time.Rds
+$(T2): R/2-FirstPassageTime.R $(der)/cleaned-locs.Rds
+	Rscript "R/2-FirstPassageTime.R"
+
+## 1 - Prep data
+T1 := $(der)/info-blockidyr.Rds $(der)/info-block-limits.Rds $(der)/cleaned-locs.Rds
+$(T1): R/1-PrepData.R $(raw)/AllCaribouDataRaw.csv
+	Rscript "R/1-PrepData.R"

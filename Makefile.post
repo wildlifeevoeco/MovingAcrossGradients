@@ -1,0 +1,23 @@
+### Makefile
+# Alec Robitaille
+
+der = data/derived-data
+raw = data/raw-data
+
+## 6- Reaction Norms
+T6 := $(der)/info-blockidyr.Rds $(der)/info-block-limits.Rds $(der)/first-passage-time.Rds $(der)/areas.Rds $(der)/patchiness.Rds
+
+$(T6): graphics/raw_FPTvCIRG.png
+	Rscript "R/6-ReactionNorms.R"
+
+## 5 - Patchiness
+T5 := $(der)/patchiness.Rds $(der)/observedPatch.Rds
+
+$(T5): R/5-CalcIRG.R $(der)/cleaned-locs.Rds $(der)/quantile-defs-blockidyr
+	Rscript "R/5-CalcIRG.R"
+
+## 4 - Calc IRG
+T4 := $(der)/patch-observedfalse-irg.Rds $(der)/quantile-defs-blockidyr.Rds $(der)/morans.Rds
+
+$(T4): R/4-Patchiness.R  $(der)/cleaned-locs.Rds $(der)/match-grid-verts
+	Rscript "R/4-Patchiness.R"
