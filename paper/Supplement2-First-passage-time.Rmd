@@ -40,8 +40,8 @@ source('R/variables.R')
 
 locs <- readRDS('data/derived-data/cleaned-locs.Rds')
 DT <- readRDS('data/derived-data/DT_final_brns.Rds')
-sensitivity <- readRDS("data/derived-data/FPT-sensitivity/FPTsensitivity.RDS")
-mod1 <- readRDS("data/derived-data/FPT-sensitivity/FPTbrokenStickMod1.RDS")
+sensitivity <- readRDS("data/derived-data/sensitivity/FPTsensitivity.RDS")
+mod1 <- readRDS("data/derived-data/sensitivity/FPTbrokenStickMod1.RDS")
 out <- readRDS("data/derived-data/first-passage-time.Rds")
 ```
 
