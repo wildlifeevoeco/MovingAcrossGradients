@@ -48,6 +48,8 @@ out <- readRDS("data/derived-data/first-passage-time.Rds")
 
 \thispagestyle{empty}
 
+### **Supplement 1: Extended first-passage time methods**
+
 The ecology of individual differences empirically applied to space-use and movement tactics
 
 Quinn M. R. Webber$^{1,*}$, Michel P. Laforge$^{2,*,+}$, Maegwin Bonar$^{2}$, Alec L. Robitaille$^{2}$, Christopher Hart$^{2}$, Sana Zabihi-Seissan$^{2}$, Eric Vander Wal$^{1,2}$.
@@ -70,7 +72,7 @@ The American Naturalist
 
 ### **Supplement 1: Extended first-passage time methods**
 
-We define area-restricted search as an individual’s tendency to focus search efforts in areas where forage has been found in the past, or upon encountering forage [@Fauchald2003; @Hills2006]. We used first-passage time (FPT) as an individually-based empirical proxy for area-restricted search (e.g., @Fauchald2003) with first-passage time values assigned to each individual in each `r blockLength`-day time-window. First-passage time was calculated by determining the amount of time, measured in hours, required for an individual to cross a circle of a given radius during each `r blockLength`-day time-window [@Fauchald2003]. Higher first-passage time values, and thus area-restricted search, reflect slower linear movement, and presumably more intensive local foraging, while lower first-passage time values, and thus area-restricted search, reflect faster linear movement, and presumably less intensive local foraging (e.g., @Barraquand2008). To estimate biologically relevant radii for first-passage time, we followed the method outlined by @Fauchald2003 where the radius of an FPT zone is selected based on the relationship between radius size and maximum variance in log-transformed mean first-passage time (figure B1). Specifically, we used each individual’s trajectory in each `r blockLength`-day time-window (see above) and calculated variance in log-transformed mean first-passage time for a range of radius values (from 0 to 10,000 m at 50 m intervals) to determine the radius where variance in log-transformed mean first-passage time was greatest [@Fauchald2003; @Barraquand2008].
+We define area-restricted search as an individual’s tendency to focus search efforts in areas where forage has been found in the past, or upon encountering forage [@Fauchald2003; @Hills2006]. We used first-passage time (FPT) as an individually-based empirical proxy for area-restricted search (e.g., @Fauchald2003) with first-passage time values assigned to each individual in each `r blockLength`-day time-window. First-passage time was calculated by determining the amount of time, measured in hours, required for an individual to cross a circle of a given radius during each `r blockLength`-day time-window [@Fauchald2003]. Higher first-passage time values, and thus area-restricted search, reflect slower linear movement, and presumably more intensive local foraging, while lower first-passage time values, and thus area-restricted search, reflect faster linear movement, and presumably less intensive local foraging (e.g., @Barraquand2008). To estimate biologically relevant radii for first-passage time, we followed the method outlined by @Fauchald2003 where the radius of an FPT zone is selected based on the relationship between radius size and maximum variance in log-transformed mean first-passage time (Figure S1.1). Specifically, we used each individual’s trajectory in each `r blockLength`-day time-window (see above) and calculated variance in log-transformed mean first-passage time for a range of radius values (from 0 to 10,000 m at 50 m intervals) to determine the radius where variance in log-transformed mean first-passage time was greatest [@Fauchald2003; @Barraquand2008].
 
 
 ```{r}
@@ -81,7 +83,7 @@ maxDur <- length(out[meanFPT == 240]$blockidyr)
 ```
 
 
-The radius with the maximum variance was `r sens` m, however, visual inspection of our analysis suggested that variance plateaued, so we used a broken-stick regression to identify the point at which the relationship between var(FPT) and radius values transitioned (figure B1 A). To define first-passage time, and thus area-restricted search, we selected the transition radius of `r rad` m, as opposed to `r sens` m because `r rad` m was the approximate transition between increasing variance in log(FPT) and radius size (figure B1 B). A small subset of individuals (`r round((maxDur/N)*100, digits = 0)`% of all individual by time-window by year combinations: `r maxDur`/`r N`) did not move from within their initial radius during the `r blockLength`-day window, so we assigned these individuals a first-passage time value 240 hours, i.e., the number of hours in each `r blockLength`-day time-window. Our transition radius of `r rad` m is also biologically relevant in the context of foraging behavior and resource selection for Newfoundland caribou. Specifically, caribou in Newfoundland make foraging and resource selection decisions at a scale of approximately 2 km, suggesting that coarse grain, or long-distance, selection is important for selecting and avoiding certain habitats [@Bastille-Rousseau2017].
+The radius with the maximum variance was `r sens` m, however, visual inspection of our analysis suggested that variance plateaued, so we used a broken-stick regression to identify the point at which the relationship between var(FPT) and radius values transitioned (Figure S1.1 A). To define first-passage time, and thus area-restricted search, we selected the transition radius of `r rad` m, as opposed to `r sens` m because `r rad` m was the approximate transition between increasing variance in log(FPT) and radius size (Figure S1.1 B). A small subset of individuals (`r round((maxDur/N)*100, digits = 0)`% of all individual by time-window by year combinations: `r maxDur`/`r N`) did not move from within their initial radius during the `r blockLength`-day window, so we assigned these individuals a first-passage time value 240 hours, i.e., the number of hours in each `r blockLength`-day time-window. Our transition radius of `r rad` m is also biologically relevant in the context of foraging behavior and resource selection for Newfoundland caribou. Specifically, caribou in Newfoundland make foraging and resource selection decisions at a scale of approximately 2 km, suggesting that coarse grain, or long-distance, selection is important for selecting and avoiding certain habitats [@Bastille-Rousseau2017].
 
 To ensure that FPT values were not influenced by the fix-interval, i.e., duration of time between successive GPS fixes, we repeated the same procedure described above based on data that was filtered to only include fixes every four, eight, and twelve hours. We filtered data at the population level (i.e., all herds combined) and re-generated FPT values for all individuals in each `r blockLength`-day time-window (Figure S1.1). We also conducted the same sensitivity analyses as described above for FPT values generated at each fix-interval (figure S1.2).
 
@@ -187,7 +189,7 @@ fpt.dt.all <- Reduce(function(x,y) x[y, on = 'blockidyr'], lsFPT)
 
 textsize <- 18
 pdf("graphics/Supplement1/FigS1_2_FPT_fix_interval.pdf",
-		height = 9, width = 15)
+		height = 9, width = 13)
 aa = ggplot(fpt.dt.all, aes(meanFPT2hr, meanFPT4hr)) +
 	geom_point() +
 	geom_smooth(method = "lm") +
@@ -276,8 +278,6 @@ grid.arrange(aa,bb,cc,dd,ee,ff,nrow = 2, ncol = 3)
 dev.off()
 
 
-## summary of correlations between FPT at different scales
-## results go in caption of Figure B2
 deg <- lm(meanFPT2hr ~ meanFPT4hr, data = fpt.dt.all) %>% df.residual()
 mod24 <- glance(lm(meanFPT2hr ~ meanFPT4hr, data = fpt.dt.all))
 mod28 <- glance(lm(meanFPT2hr ~ meanFPT8hr, data = fpt.dt.all))
@@ -320,8 +320,8 @@ a3.12hr <- a1.12hr[seq <= 4900]
 
 pdf("graphics/Supplement1/Fig1_3_FPT_analysis_fix_interval.pdf")
 par(mfrow = c(3,2), mai = c(0.4, 0.4, 0.4, 0.4))
+
 ### 4 hour intervals
-# par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
 	var ~ seq,
 	data = a1.4hr,
@@ -344,10 +344,9 @@ arrows(
 	angle = 90,
 	code = 3
 )
-abline(v = 2448.9796, lty = 1, col = "red") ## this number is the seq value when var is highest
+abline(v = 2448.9796, lty = 1, col = "red") 
 mtext(text = "A", at = 1, cex = 1.2)
 
-# par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
 	var ~ seq,
 	data = a3.4hr,
@@ -384,7 +383,6 @@ lines(fitted.values ~ seq,
 mtext(text = "B", at = 1, cex = 1.2)
 
 #### 8 hour intervals
-# par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
 	var ~ seq,
 	data = a1.8hr,
@@ -407,10 +405,9 @@ arrows(
 	angle = 90,
 	code = 3
 )
-abline(v = 4693.8776, lty = 1, col = "red") ## this number is the seq value when var is highest
+abline(v = 4693.8776, lty = 1, col = "red") 
 mtext(text = "C", at = 1, cex = 1.2)
 
-# par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
 	var ~ seq,
 	data = a3.8hr,
@@ -447,7 +444,6 @@ lines(fitted.values ~ seq,
 mtext(text = "D", at = 1, cex = 1.2)
 
 #### 12 hour intervals
-# par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
 	var ~ seq,
 	data = a1.12hr,
@@ -470,10 +466,9 @@ arrows(
 	angle = 90,
 	code = 3
 )
-abline(v = 4897.9592 , lty = 1, col = "red") ## this number is the seq value when var is highest
+abline(v = 4897.9592 , lty = 1, col = "red") 
 mtext(text = "E", at = 1, cex = 1.2)
 
-# par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
 	var ~ seq,
 	data = a3.12hr,
