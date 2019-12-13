@@ -3,6 +3,7 @@ output:
   bookdown::pdf_document2:
     number_sections: FALSE
     toc: FALSE
+urlcolor: blue
 fontsize: 12pt
 header-includes:
     - \usepackage{caption}
@@ -12,12 +13,13 @@ header-includes:
     - \doublespacing
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
-    - \captionsetup{font={stretch=2}}
-    - \renewcommand{\headrulewidth}{0pt}
-    - \setlength{\headheight}{24pt}
-    - \fancyhead[L]{\fontsize{10}{12} \selectfont The ecology of individual differences empirically applied to space-use and movement tactics. The American Naturalist.}
+    - \setlength{\headheight}{16pt}
+    - \captionsetup{labelformat=empty, font=singlespacing}
+    - \fancyhead[L]{\selectfont Moving across gradients.}
 bibliography: refs.bib
+csl: amnat.csl
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
