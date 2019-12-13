@@ -1,7 +1,6 @@
 # Directories with large files #
 ################################
 data/raw-data
-data/derived-data
 
 # R related files #
 ###################
