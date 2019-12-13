@@ -6,16 +6,18 @@ output:
 fontsize: 12pt
 header-includes:
     - \usepackage{caption}
+    - \captionsetup{labelformat=empty, font=singlespacing}
     - \usepackage{booktabs}
     - \usepackage{mathpazo}
     - \usepackage{setspace}
-    - \captionsetup{font={stretch=2}}
     - \doublespacing
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
     - \renewcommand{\headrulewidth}{0pt}
     - \setlength{\headheight}{24pt}
-    - \fancyhead[L]{\fontsize{10}{12} \selectfont The ecology of individual differences empirically applied to space-use and movement tactics. The American Naturalist.}
+    - \fancyhead[L]{\fontsize{10}{12} \selectfont Moving across gradients.}
+    - \fancyhead[R]{\fontsize{10}{12} \selectfont Webber, Laforge, Bonar, Robitaille, Hart, Zabihi-Seissan, Vander Wal}
+
 bibliography: refs.bib
 ---
 
@@ -58,17 +60,15 @@ We calculated `r DT[, uniqueN(blockidyr)]` unique individuals across all 10-day 
 
 \captionsetup[figure]{labelformat=empty}
 
-![**Figure A1**: Map of study area in Newfoundland, Canada, with the locations of six caribou (*Rangifer tarandus*) herds used for data collection between 2006–2013.](../graphics/Supplement1/FigS1_1_studyarea.png) 
+![**Figure A1**: Map of study area in Newfoundland, Canada, with the locations of six caribou (*Rangifer tarandus*) herds used for data collection between 2006–2013.](../graphics/AppendixA/FigA1_studyarea.pdf) 
 
 \newpage
 
 
-\captionsetup[table]{labelformat=empty}
-
 (ref:tab1) **Table A1**: Summary of herd-by-year data used for analyses, including number of individuals (IDs) from each herd-year combination and the total number of GPS-telemetry fixes generated within each herd-year combination. Values in totals row indicate number of unique individuals per herd and values in the totals column indicate number of collared individuals per year. Note, in total, there were 129 uniquely collared individuals between 2006 and 2013 across all herds.
 
 
-```{r tabS11}
+```{r tabA1}
 # Capitalize
 locs[, Herd := paste0(substr(HERD, 1, 1), tolower(substr(HERD, 2, nchar(HERD))))]
 
@@ -133,7 +133,7 @@ kable(all,
 
 
 
-```{r figs11, results = 'hide'}
+```{r figA2, results = 'hide'}
 DT$herd2[DT$HERD == "POTHILL"] <- 'Pot Hill'
 DT$herd2[DT$HERD == "TOPSAILS"] <- 'Topsails'
 DT$herd2[DT$HERD == "LAPOILE"] <- 'La Poile'
@@ -147,12 +147,11 @@ a1 = aov(moranScaled~HERD,data = DT)
 tuk <- TukeyHSD(a1)
 gl <- glance(a1)
 
-png(
-	"graphics/Supplement1/FigS1_2_boxplot_AvgIRGByHerd.png",
-	width = 2500,
-	height = 2000,
-	res = 500,
-	units = "px"
+pdf(
+	"graphics/AppendixA/FigA2_boxplot_AvgIRGByHerd.pdf",
+	width = 7,
+	height = 6,
+	useDingbats = FALSE
 )
 ggplot(data = DT, aes(x = reorder(herd2, moran, mean), y = moran)) +
 	geom_boxplot(notch = TRUE, fill = '#A4A4A4') +
@@ -177,7 +176,7 @@ dev.off()
 
 \captionsetup[figure]{labelformat=empty}
 
-![**Figure S1.2**: Spatial distribution of forage patch heterogeneity (i.e., Moran’s I) values across six caribou herds in Newfoundland. Herds are ordered from lowest to highest mean forage patch heterogeneity values, where negative values reflect habitats where foraging resources are uniformly distributed, while positive values represent habitats where foraging resources are heterogeneously distributed. We observed differences in Moran’s I across herds (F~5,`r df.residual(a1)`~ = `r round(gl$statistic, 2)`, p < 0.001), however, results of pairwise comparisons adjusted using Tukey’s post-hoc test suggested significant differences between La Poile–Grey River, Middle Ridge–Grey River, and Pot Hill–La Poile.](../graphics/Supplement1/FigS1_2_boxplot_AvgIRGByHerd.png) 
+![**Figure A2**: Spatial distribution of forage patch heterogeneity (i.e., Moran’s I) values across six caribou herds in Newfoundland. Herds are ordered from lowest to highest mean forage patch heterogeneity values, where negative values reflect habitats where foraging resources are uniformly distributed, while positive values represent habitats where foraging resources are heterogeneously distributed. We observed differences in Moran’s I across herds (F~5,`r df.residual(a1)`~ = `r round(gl$statistic, 2)`, p < 0.001), however, results of pairwise comparisons adjusted using Tukey’s post-hoc test suggested significant differences between La Poile–Grey River, Middle Ridge–Grey River, and Pot Hill–La Poile.](../graphics/AppendixA/FigA2_boxplot_AvgIRGByHerd.pdf) 
 
 
 \clearpage
