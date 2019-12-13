@@ -17,8 +17,8 @@ header-includes:
     - \setlength{\headheight}{24pt}
     - \fancyhead[L]{\fontsize{10}{12} \selectfont Moving across gradients.}
     - \fancyhead[R]{\fontsize{10}{12} \selectfont Webber, Laforge, Bonar, Robitaille, Hart, Zabihi-Seissan, Vander Wal}
-
 bibliography: refs.bib
+csl: amnat.csl
 ---
 
 
