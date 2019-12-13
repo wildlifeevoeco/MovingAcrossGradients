@@ -116,7 +116,7 @@ intKDE = lm(Value ~ moranScaled, data = df_fit_kde)$coefficients[1]
 slopeKDE = lm(Value ~ moranScaled, data = df_fit_kde)$coefficients[2]
 
 ### Figure 1 ----
-pdf("graphics/Figures/Fig3_BRNs.pdf", height = 4)
+pdf("graphics/Figures/Fig3_BRNs.pdf", height = 4, useDingbats = FALSE)
 a = ggplot(df_fit_fpt, aes(x = moranScaled, y = Value, group = factor(ID))) +
 	geom_smooth(
 		aes(moranScaled, Value, group = ID),
