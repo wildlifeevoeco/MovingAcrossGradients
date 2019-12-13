@@ -12,6 +12,14 @@
       - Sana Zabihi-Seissan
       - [Eric Vander Wal](http://weel.gitlab.io)
 
+This repository contains the code accompanying the paper “The ecology of
+individual differences empirically applied to space-use and movement
+tactics”. R scripts are organized in `R/` and the Earth Engine script is
+in `EE/`. Package dependencies include: `data.table`, `ggplot2`, `irg`,
+`rgdal`, `gridExtra`, `sp`, `spatsoc`, `toast`, `adehabitatLT`,
+`segmented`, `rgeos`, `raster`, `lme4`, `MCMCglmm`, `tidyr`, `sqldf`,
+`lmtest`, `dplyr`.
+
 ## Abstract
 
 Movement provides a link between individual behavioral ecology and the
