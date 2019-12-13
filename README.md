@@ -1,6 +1,8 @@
 
 ## The ecology of individual differences empirically applied to space-use and movement tactics
 
+[![DOI](https://zenodo.org/badge/226946276.svg)](https://zenodo.org/badge/latestdoi/226946276)
+
   - Authors:
       - [Quinn M.R. Webber](https://qwebber.weebly.com/)
       - [Michel P. Laforge](https://mammalspatialecology.weebly.com/)
