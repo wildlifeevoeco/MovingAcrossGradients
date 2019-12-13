@@ -95,6 +95,7 @@ a3 <- a1[seq <= 4500]
 
 pdf("graphics/Supplement1/FigS1_1_FPT_analysis.pdf",
 		height = 7, width = 15)
+cex = 1.7
 par(mfrow = c(1, 2))
 par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
@@ -106,7 +107,7 @@ plot(
 	ylab = "Variance of log(FPT)",
 	xlab = "Radius (m)",
 	cex.axis = 1.2,
-	cex.lab = 1.2
+	cex.lab = cex
 )
 lines(var ~ seq, data = a1)
 abline(h = max(a1$var, na.rm = T), lty = 2)
@@ -120,7 +121,7 @@ arrows(
 	code = 3
 )
 abline(v = 4285.7143, lty = 1, col = "red")
-mtext(text = "A", at = 1, cex = 1.2)
+mtext(text = "A", at = 1, cex = cex)
 
 par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
@@ -133,7 +134,7 @@ plot(
 	ylab = "Variance of log(FPT)",
 	xlab = "Radius (m)",
 	cex.axis = 1.2,
-	cex.lab = 1.2
+	cex.lab = cex
 )
 lines(var ~ seq, data = a3)
 abline(h = max(a3$va, na.rm = T), lty = 2)
@@ -156,7 +157,7 @@ lines(fitted.values ~ seq,
 			data = a2,
 			lwd = 2,
 			col = "red")
-mtext(text = "B", at = 1, cex = 1.2)
+mtext(text = "B", at = 1, cex = cex)
 dev.off()
 ```
 
@@ -184,8 +185,9 @@ fpt.dt12hr <- readRDS('data/derived-data/sensitivity/first-passage-time12hr.Rds'
 lsFPT <- list(fpt.dt2hr, fpt.dt4hr, fpt.dt8hr, fpt.dt12hr)
 fpt.dt.all <- Reduce(function(x,y) x[y, on = 'blockidyr'], lsFPT)
 
+textsize <- 18
 pdf("graphics/Supplement1/FigS1_2_FPT_fix_interval.pdf",
-		height = 7, width = 15)
+		height = 9, width = 15)
 aa = ggplot(fpt.dt.all, aes(meanFPT2hr, meanFPT4hr)) +
 	geom_point() +
 	geom_smooth(method = "lm") +
@@ -193,9 +195,9 @@ aa = ggplot(fpt.dt.all, aes(meanFPT2hr, meanFPT4hr)) +
 	ylab('Mean FPT (4 hr fixes)') +
 	ggtitle('A)') +
 	theme(legend.position = 'none',
-				axis.text=element_text(size=8),
-				axis.title=element_text(size=10,face = "bold"),
-				strip.text = element_text(size=8,face = "bold"),
+				axis.text=element_text(size=textsize),
+				axis.title=element_text(size=textsize+2),
+				strip.text = element_text(size=textsize),
 				panel.grid.minor = element_blank(),
 				panel.background = element_blank(),
 				panel.border = element_rect(colour = "black", fill=NA, size=1))
@@ -207,9 +209,9 @@ bb = ggplot(fpt.dt.all, aes(meanFPT2hr, meanFPT8hr)) +
 	ylab('Mean FPT (8 hr fixes)') +
 	ggtitle('B)') +
 	theme(legend.position = 'none',
-				axis.text=element_text(size=8),
-				axis.title=element_text(size=10,face = "bold"),
-				strip.text = element_text(size=8,face = "bold"),
+				axis.text=element_text(size=textsize),
+				axis.title=element_text(size=textsize+2),
+				strip.text = element_text(size=textsize),
 				panel.grid.minor = element_blank(),
 				panel.background = element_blank(),
 				panel.border = element_rect(colour = "black", fill=NA, size=1))
@@ -221,9 +223,9 @@ cc = ggplot(fpt.dt.all, aes(meanFPT2hr, meanFPT12hr)) +
 	ylab('Mean FPT (12 hr fixes)') +
 	ggtitle('C)') +
 	theme(legend.position = 'none',
-				axis.text=element_text(size=8),
-				axis.title=element_text(size=10,face = "bold"),
-				strip.text = element_text(size=8,face = "bold"),
+				axis.text=element_text(size=textsize),
+				axis.title=element_text(size=textsize+2),
+				strip.text = element_text(size=textsize),
 				panel.grid.minor = element_blank(),
 				panel.background = element_blank(),
 				panel.border = element_rect(colour = "black", fill=NA, size=1))
@@ -235,9 +237,9 @@ dd = ggplot(fpt.dt.all, aes(meanFPT4hr, meanFPT8hr)) +
 	ylab('Mean FPT (8 hr fixes)') +
 	ggtitle('D)') +
 	theme(legend.position = 'none',
-				axis.text=element_text(size=8),
-				axis.title=element_text(size=10,face = "bold"),
-				strip.text = element_text(size=8,face = "bold"),
+				axis.text=element_text(size=textsize),
+				axis.title=element_text(size=textsize+2),
+				strip.text = element_text(size=textsize),
 				panel.grid.minor = element_blank(),
 				panel.background = element_blank(),
 				panel.border = element_rect(colour = "black", fill=NA, size=1))
@@ -249,9 +251,9 @@ ee = ggplot(fpt.dt.all, aes(meanFPT4hr, meanFPT12hr)) +
 	ylab('Mean FPT (12 hr fixes)') +
 	ggtitle('E)') +
 	theme(legend.position = 'none',
-				axis.text=element_text(size=8),
-				axis.title=element_text(size=10,face = "bold"),
-				strip.text = element_text(size=8,face = "bold"),
+				axis.text=element_text(size=textsize),
+				axis.title=element_text(size=textsize+2),
+				strip.text = element_text(size=textsize),
 				panel.grid.minor = element_blank(),
 				panel.background = element_blank(),
 				panel.border = element_rect(colour = "black", fill=NA, size=1))
@@ -263,9 +265,9 @@ ff = ggplot(fpt.dt.all, aes(meanFPT8hr, meanFPT12hr)) +
 	ylab('Mean FPT (12 hr fixes)') +
 	ggtitle('F)') +
 	theme(legend.position = 'none',
-				axis.text=element_text(size=8),
-				axis.title=element_text(size=10,face = "bold"),
-				strip.text = element_text(size=8,face = "bold"),
+				axis.text=element_text(size=textsize),
+				axis.title=element_text(size=textsize+2),
+				strip.text = element_text(size=textsize),
 				panel.grid.minor = element_blank(),
 				panel.background = element_blank(),
 				panel.border = element_rect(colour = "black", fill=NA, size=1))
@@ -317,9 +319,9 @@ a3.12hr <- a1.12hr[seq <= 4900]
 
 
 pdf("graphics/Supplement1/Fig1_3_FPT_analysis_fix_interval.pdf")
-par(mfrow = c(3,2))
+par(mfrow = c(3,2), mai = c(0.4, 0.4, 0.4, 0.4))
 ### 4 hour intervals
-par(mar = c(5, 5, 2, 2) + 0.1)
+# par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
 	var ~ seq,
 	data = a1.4hr,
@@ -345,7 +347,7 @@ arrows(
 abline(v = 2448.9796, lty = 1, col = "red") ## this number is the seq value when var is highest
 mtext(text = "A", at = 1, cex = 1.2)
 
-par(mar = c(5, 5, 2, 2) + 0.1)
+# par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
 	var ~ seq,
 	data = a3.4hr,
@@ -382,7 +384,7 @@ lines(fitted.values ~ seq,
 mtext(text = "B", at = 1, cex = 1.2)
 
 #### 8 hour intervals
-par(mar = c(5, 5, 2, 2) + 0.1)
+# par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
 	var ~ seq,
 	data = a1.8hr,
@@ -408,7 +410,7 @@ arrows(
 abline(v = 4693.8776, lty = 1, col = "red") ## this number is the seq value when var is highest
 mtext(text = "C", at = 1, cex = 1.2)
 
-par(mar = c(5, 5, 2, 2) + 0.1)
+# par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
 	var ~ seq,
 	data = a3.8hr,
@@ -445,7 +447,7 @@ lines(fitted.values ~ seq,
 mtext(text = "D", at = 1, cex = 1.2)
 
 #### 12 hour intervals
-par(mar = c(5, 5, 2, 2) + 0.1)
+# par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
 	var ~ seq,
 	data = a1.12hr,
@@ -471,7 +473,7 @@ arrows(
 abline(v = 4897.9592 , lty = 1, col = "red") ## this number is the seq value when var is highest
 mtext(text = "E", at = 1, cex = 1.2)
 
-par(mar = c(5, 5, 2, 2) + 0.1)
+# par(mar = c(5, 5, 2, 2) + 0.1)
 plot(
 	var ~ seq,
 	data = a3.12hr,
