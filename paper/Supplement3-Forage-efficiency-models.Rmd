@@ -68,10 +68,7 @@ The American Naturalist
 ### **Supplement 3: Foraging landscape efficiency model results and sensitivity analysis**
 
 
-
-(ref:tabd1) **Table D1**: Beta coefficients and 95% confidence interval (CI) for model of forage habitat selection efficiency for caribou in Newfoundland as a function of area-restricted search, range-use ratio and forage patch heterogeneity.
-
-\captionsetup[table]{labelformat=empty}
+(ref:tabs31) **Table S3.1**: Beta coefficients and 95% confidence interval (CI) for model of forage habitat selection efficiency for caribou in Newfoundland as a function of area-restricted search, range-use ratio and forage patch heterogeneity.
 
 ```{r tab1}
 coefs <- fixef(m1)
@@ -94,7 +91,7 @@ kable(data.table(Variable = names(coefs),
 			align = "l",
 			format = 'latex',
 			booktabs = TRUE, 
-			caption = '(ref:tabd1)',
+			caption = '(ref:tabs31)',
 			linesep = c('')) %>%
 	add_header_above(h) %>%
   kable_styling(font_size = 10,
@@ -103,14 +100,7 @@ kable(data.table(Variable = names(coefs),
 
 
 
-
-
-
-
-
-\captionsetup[figure]{labelformat=empty}
-
-![**Figure D1**: Sensitivity analysis for percentile of the landscape that is designated as high-quality patch for patch use models to predict the effect of first-passage time and forage patch aggregation (Moran’s I) and range-use ratio and forage patch aggregation on foraging efficiency for caribou (*Rangifer tarandus*, n = `r locs[, uniqueN(ANIMAL_ID)]`) in Newfoundland. Top two rows represent the response to first-passage time, bottom two rows represent response to range-use ratio (the other variable is held at its mean). Cell values represent the relative proportion of time an individual spends in high quality foraging habitat (the top x% of mean values of instantaneous rate of growth). Note, 20% of the landscape was designated as high-quality patch for all results displayed in the main text. ](../graphics/AppendixD/FigD1.PNG)
+![**Figure S3.1**: Sensitivity analysis for percentile of the landscape that is designated as high-quality patch for patch use models to predict the effect of first-passage time and forage patch aggregation (Moran’s I) and range-use ratio and forage patch aggregation on foraging efficiency for caribou (*Rangifer tarandus*, n = `r locs[, uniqueN(ANIMAL_ID)]`) in Newfoundland. Top two rows represent the response to first-passage time, bottom two rows represent response to range-use ratio (the other variable is held at its mean). Cell values represent the relative proportion of time an individual spends in high quality foraging habitat (the top x% of mean values of instantaneous rate of growth). Note, 20% of the landscape was designated as high-quality patch for all results displayed in the main text. ](../graphics/Supplement3/FigS3_1.png)
 
 
 
