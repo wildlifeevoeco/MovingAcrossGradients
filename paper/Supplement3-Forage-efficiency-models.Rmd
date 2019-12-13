@@ -3,6 +3,7 @@ output:
   bookdown::pdf_document2:
     number_sections: FALSE
     toc: FALSE
+urlcolor: blue
 fontsize: 12pt
 header-includes:
     - \usepackage{caption}
@@ -10,12 +11,13 @@ header-includes:
     - \usepackage{mathpazo}
     - \usepackage{setspace}
     - \doublespacing
-    - \captionsetup{font={stretch=2}}
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
-    - \renewcommand{\headrulewidth}{0pt}
-    - \setlength{\headheight}{24pt}
-    - \fancyhead[L]{\fontsize{10}{12} \selectfont The ecology of individual differences empirically applied to space-use and movement tactics. The American Naturalist.}
+    - \setlength{\headheight}{16pt}
+    - \captionsetup{labelformat=empty, font=singlespacing}
+    - \fancyhead[L]{\selectfont Moving across gradients.}
+bibliography: refs.bib
+csl: amnat.csl
 ---
 
 ```{r setup, include=FALSE}
@@ -39,8 +41,31 @@ locs <- readRDS('data/derived-data/cleaned-locs.Rds')
 m1 <- readRDS('data/derived-data/figure2-m1.Rds')
 ```
 
+\thispagestyle{empty}
 
-### **Appendix D: Foraging landscape efficiency model results and sensitivity analysis**
+### **Supplement 3: Foraging landscape efficiency model results and sensitivity analysis**
+
+The ecology of individual differences empirically applied to space-use and movement tactics
+
+Quinn M. R. Webber$^{1,*}$, Michel P. Laforge$^{2,*,+}$, Maegwin Bonar$^{2}$, Alec L. Robitaille$^{2}$, Christopher Hart$^{2}$, Sana Zabihi-Seissan$^{2}$, Eric Vander Wal$^{1,2}$.
+
+
+1. Cognitive and Behavioural Ecology Interdisciplinary Program, Memorial University of Newfoundland, St. John’s, Newfoundland, Canada
+
+2. Department of Biology, Memorial University of Newfoundland, St. John’s, Newfoundland, Canada
+
+
+$*$ These authors contributed equally to the preparation of this manuscript.
+
+
+$+$ Corresponding author e-mail: m.laforge@mun.ca
+
+The American Naturalist
+
+\newpage
+\setcounter{page}{1}
+
+### **Supplement 3: Foraging landscape efficiency model results and sensitivity analysis**
 
 
 
