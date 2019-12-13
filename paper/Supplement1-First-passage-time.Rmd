@@ -13,6 +13,7 @@ header-includes:
     - \doublespacing
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
+    - \setlength{\headheight}{16pt}
     - \captionsetup{labelformat=empty, font=singlespacing}
     - \fancyhead[L]{\selectfont Moving across gradients.}
 bibliography: refs.bib
