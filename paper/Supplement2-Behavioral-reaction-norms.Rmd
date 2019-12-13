@@ -41,29 +41,53 @@ library(gridExtra)
 
 source('R/variables.R')
 
-# Tab S3.1 Fig S3.3
-mcmc5 <- readRDS("data/derived-data/MCMC-models/mod5.RDS")
+# Tab S2.1 Fig S2.3
+mcmc5 <- readRDS("data/derived-data/mcmc/mod5.RDS")
 
-# Fig S3.1
-df_fit_fpt <- readRDS("data/derived-data/MCMC-output-data/df_model_fit_fpt.RDS")
+# Fig S2.1
+df_fit_fpt <- readRDS("data/derived-data/mcmc/df_model_fit_fpt.RDS")
 
-# Fig S3.3
-df_fit_kde <- readRDS("data/derived-data/MCMC-output-data/df_model_fit_kde.RDS")
+# Fig S2.3
+df_fit_kde <- readRDS("data/derived-data/mcmc/df_model_fit_kde.RDS")
 ```
 
 
-### **Supplement 3: Extended behavioral reaction norm methods and results**
+\thispagestyle{empty}
 
-Behavioral reaction norms (BRNs) represent behavioral phenotypes expressed by individuals across an environmental gradient, where the BRN intercept reflects personality and the BRN slope reflects plasticity [@Dingemanse2010]. We used BRNs to evaluate consistency and plasticity of area-restricted search and range-use ratio across a forage patch heterogeneity gradient [@Dingemanse2010; @Houslay2017]. Models included area-restricted search and range-use ratio as co-response variables in a bivariate Bayesian mixed model (package `MCMCglmm`: @Hadfield2010) as a function of mean-centered forage patch heterogeneity (table 3; table C1). To assess effects of individual (I) and Environment (E) on our response variables we parameterized five models: (1) an intercept only model, with no fixed or random effects (no effect of I or E); (2) an intercept only model with animal identification (ID) as a random intercept (effect of I only); (3) mean-centered patchiness, time-window (1–5, see above), herd, and year (2006–2013) as fixed effects and ID as a random intercept (effect of I accounting for fixed effects); (4) mean-centered patchiness, time-window and an interaction between herd and year as fixed effects and ID as a random intercept (effect of I accounting for fixed effects interaction); (5) mean-centered patchiness, time-window, herd, and year as fixed effects, ID as a random intercept and mean-centered patchiness as a random slope associated with ID (effect of I and E). The most parsimonious model was model (5), suggesting the existence of an Individual–Environment interaction [@Nussey2007]. We then examined variation in plasticity of area-restricted search (figure C1) and range-use ratio (figure C2) across herds and found a consistent response as foraging patch heterogeneity varied.
+### **Supplement 2: Extended behavioral reaction norm methods and results**
 
-We also examined phenotypic covariance among BRN components, i.e., intercepts and slopes, for each of area-restricted search and range-use ratio. Intercepts reflect an individual’s behavioral response in an average, i.e., mean-centered environment, while slopes reflect an individual’s plasticity, i.e., behavioral response across an environmental gradient. Intercept-by-intercept covariance reflects a classic behavioral syndrome (Sih et al. 2012) where two personality traits are correlated. Slope-by-slope covariance reflects a non-traditional and relatively under-studied aspect of BRNs, where plasticity in one trait is correlated with plasticity in another trait. Slope-by-intercept covariance, or personality-dependent plasticity, reflects covariance between an individual’s response in an average environment with their response across an environmental gradient. We observed no significant relationship between area-restricted search and range-use ratio intercepts (figure S3.3 *A*), while we observed strong, negative covariance between area-restricted search and range-use ratio slopes (figure S3.3 *B*). We also observed covariance for slope-by-intercept covariance in area-restricted search (figure S3.3 *C*) and range-use ratio (figure S3.3 *D*).
+The ecology of individual differences empirically applied to space-use and movement tactics
+
+Quinn M. R. Webber$^{1,*}$, Michel P. Laforge$^{2,*,+}$, Maegwin Bonar$^{2}$, Alec L. Robitaille$^{2}$, Christopher Hart$^{2}$, Sana Zabihi-Seissan$^{2}$, Eric Vander Wal$^{1,2}$.
+
+
+1. Cognitive and Behavioural Ecology Interdisciplinary Program, Memorial University of Newfoundland, St. John’s, Newfoundland, Canada
+
+2. Department of Biology, Memorial University of Newfoundland, St. John’s, Newfoundland, Canada
+
+
+$*$ These authors contributed equally to the preparation of this manuscript.
+
+
+$+$ Corresponding author e-mail: m.laforge@mun.ca
+
+The American Naturalist
+
+\newpage
+\setcounter{page}{1}
+
+
+### **Supplement 2: Extended behavioral reaction norm methods and results**
+
+Behavioral reaction norms (BRNs) represent behavioral phenotypes expressed by individuals across an environmental gradient, where the BRN intercept reflects personality and the BRN slope reflects plasticity [@Dingemanse2010]. We used BRNs to evaluate consistency and plasticity of area-restricted search and range-use ratio across a forage patch heterogeneity gradient [@Dingemanse2010; @Houslay2017]. Models included area-restricted search and range-use ratio as co-response variables in a bivariate Bayesian mixed model (package `MCMCglmm`: @Hadfield2010) as a function of mean-centered forage patch heterogeneity (Table 3; Table S2.1). To assess effects of individual (I) and Environment (E) on our response variables we parameterized five models: (1) an intercept only model, with no fixed or random effects (no effect of I or E); (2) an intercept only model with animal identification (ID) as a random intercept (effect of I only); (3) mean-centered patchiness, time-window (1–5, see above), herd, and year (2006–2013) as fixed effects and ID as a random intercept (effect of I accounting for fixed effects); (4) mean-centered patchiness, time-window and an interaction between herd and year as fixed effects and ID as a random intercept (effect of I accounting for fixed effects interaction); (5) mean-centered patchiness, time-window, herd, and year as fixed effects, ID as a random intercept and mean-centered patchiness as a random slope associated with ID (effect of I and E). The most parsimonious model was model (5), suggesting the existence of an Individual–Environment interaction [@Nussey2007]. We then examined variation in plasticity of area-restricted search (Figure S2.1) and range-use ratio (Figure S2.2) across herds and found a consistent response as foraging patch heterogeneity varied.
+
+We also examined phenotypic covariance among BRN components, i.e., intercepts and slopes, for each of area-restricted search and range-use ratio. Intercepts reflect an individual’s behavioral response in an average, i.e., mean-centered environment, while slopes reflect an individual’s plasticity, i.e., behavioral response across an environmental gradient. Intercept-by-intercept covariance reflects a classic behavioral syndrome (Sih et al. 2012) where two personality traits are correlated. Slope-by-slope covariance reflects a non-traditional and relatively under-studied aspect of BRNs, where plasticity in one trait is correlated with plasticity in another trait. Slope-by-intercept covariance, or personality-dependent plasticity, reflects covariance between an individual’s response in an average environment with their response across an environmental gradient. We observed no significant relationship between area-restricted search and range-use ratio intercepts (Figure S2.3 *A*), while we observed strong, negative covariance between area-restricted search and range-use ratio slopes (Figure S2.3 *B*). We also observed covariance for slope-by-intercept covariance in area-restricted search (Figure S2.3 *C*) and range-use ratio (Figure S2.3 *D*).
 
 
 
-(ref:tabc1) **Table C1**: Estimates for fixed effects are given for the most parsimonious model where area-restricted search (ARS) and range-use ratio (RUR) were co-response variables in a bivariate Bayesian mixed model testing the effects of forage patch heterogeneity (FPH: mean-centered Moran’s I), time-window (see above), year (2006–2013), and herd. 95% credible intervals are displayed in brackets for each posterior mean. See Table 3 of main text for random structure results. Note, reference category for Herd is Buchans and for Year is 2006.
+(ref:tabS21) **Table S2.1**: Estimates for fixed effects are given for the most parsimonious model where area-restricted search (ARS) and range-use ratio (RUR) were co-response variables in a bivariate Bayesian mixed model testing the effects of forage patch heterogeneity (FPH: mean-centered Moran’s I), time-window (see above), year (2006–2013), and herd. 95% credible intervals are displayed in brackets for each posterior mean. See Table 3 of main text for random structure results. Note, reference category for Herd is Buchans and for Year is 2006.
 
-\captionsetup[table]{labelformat=empty}
-```{r tabC1, results = 'asis'}
+```{r tabS21, results = 'asis'}
 fixed <- data.table(summary(mcmc5)[["solutions"]], keep.rownames = 'term')
 
 setnames(fixed, 
@@ -125,7 +149,7 @@ setnames(tabc1, c('Fixed effect', 'Posterior mean', 'p-value', 'Posterior mean',
 
 options(knitr.kable.NA = '') 
 knitr::kable(tabc1,
-             caption = '(ref:tabc1)',
+             caption = '(ref:tabS21)',
              booktabs = TRUE,
              linesep = "") %>%
   add_header_above(c(" ", "KDE" = 2, "FPT" = 2))
@@ -133,7 +157,7 @@ knitr::kable(tabc1,
 
 
 
-```{r figC1}
+```{r}
 # ordered based on mean Moran's I
 df_fit_fpt$herd[df_fit_fpt$herd == "POTHILL"] <- 'A) Pot Hill'
 df_fit_fpt$herd[df_fit_fpt$herd == "TOPSAILS"] <- 'B) Grey River'
@@ -141,14 +165,8 @@ df_fit_fpt$herd[df_fit_fpt$herd == "LAPOILE"] <- 'C) Topsails'
 df_fit_fpt$herd[df_fit_fpt$herd == "GREY"] <- 'D) Buchans'
 df_fit_fpt$herd[df_fit_fpt$herd == "BUCHANS"] <- 'E) Middle Ridge'
 df_fit_fpt$herd[df_fit_fpt$herd == "MIDRIDGE"] <- 'F) La Poile'
-
-png(
-    "graphics/AppendixC/FigC1_FPT_BRN_byHerd.png",
-    width = 2500,
-    height = 2000,
-    res = 500,
-    units = "px"
-)
+textsize <- 12
+pdf("graphics/Supplement2/FigS2_1_FPT_BRN_byHerd.pdf")
 ggplot(df_fit_fpt, aes(x = moranScaled, y = Value, group = factor(ID))) +
     geom_smooth(
         aes(moranScaled, Value, group = ID),
@@ -161,9 +179,9 @@ ggplot(df_fit_fpt, aes(x = moranScaled, y = Value, group = factor(ID))) +
     ylab("Model predicted area-restricted search") +
     theme(
         legend.position = 'none',
-        axis.text = element_text(size = 6),
-        axis.title = element_text(size = 8),
-        strip.text = element_text(size = 6),
+        axis.text = element_text(size = textsize),
+        axis.title = element_text(size = textsize + 2),
+        strip.text = element_text(size = textsize),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         panel.border = element_rect(
@@ -180,17 +198,14 @@ dev.off()
 
 
 
-(ref:figc1) **Figure C1**: Herd-specific behavioral reaction norm testing the relationship between first-passage time and mean-centered forage patch heterogeneity (i.e., Moran’s I). Each line represents an individual behavioral response to changes in forage patch heterogeneity and crossing of lines represents individual differences in plasticity, i.e., an Individual – Environment interaction. Note, herds are ordered from lowest to highest mean forage patch heterogeneity values, where negative values of reflect habitats where foraging resources are uniformly distributed, while positive values represent habitats where foraging resources are heterogeneously distributed.
+(ref:figs21) **Figure C1**: Herd-specific behavioral reaction norm testing the relationship between first-passage time and mean-centered forage patch heterogeneity (i.e., Moran’s I). Each line represents an individual behavioral response to changes in forage patch heterogeneity and crossing of lines represents individual differences in plasticity, i.e., an Individual – Environment interaction. Note, herds are ordered from lowest to highest mean forage patch heterogeneity values, where negative values of reflect habitats where foraging resources are uniformly distributed, while positive values represent habitats where foraging resources are heterogeneously distributed.
 
 
 
-\captionsetup[figure]{labelformat=empty}
+![(ref:figs21)](../graphics/Supplement2/FigS2_1_FPT_BRN_byHerd.pdf)
 
 
-![(ref:figc1)](../graphics/AppendixC/FigC1_FPT_BRN_byHerd.png)
-
-
-```{r figC2}
+```{r}
 # ordered based on mean Moran's I
 df_fit_kde$herd[df_fit_kde$herd == "POTHILL"] <- 'A) Pot Hill'
 df_fit_kde$herd[df_fit_kde$herd == "TOPSAILS"] <- 'B) Grey River'
@@ -200,13 +215,7 @@ df_fit_kde$herd[df_fit_kde$herd == "BUCHANS"] <- 'E) Middle Ridge'
 df_fit_kde$herd[df_fit_kde$herd == "MIDRIDGE"] <- 'F) La Poile'
 
 
-png(
-    "graphics/AppendixC/FigC2_KDE_BRN_byHerd.png",
-    width = 2500,
-    height = 2000,
-    res = 500,
-    units = "px"
-)
+pdf("graphics/Supplement2/FigS2_2_KDE_BRN_byHerd.pdf")
 ggplot(df_fit_kde, aes(x = moranScaled, y = Value, group = factor(ID))) +
     geom_smooth(
         aes(moranScaled, Value, group = ID),
@@ -219,9 +228,9 @@ ggplot(df_fit_kde, aes(x = moranScaled, y = Value, group = factor(ID))) +
     ylab("Model predicted range-use ratio") +
     theme(
         legend.position = 'none',
-        axis.text = element_text(size = 6),
-        axis.title = element_text(size = 8),
-        strip.text = element_text(size = 6),
+        axis.text = element_text(size = textsize),
+        axis.title = element_text(size = textsize + 2),
+        strip.text = element_text(size = textsize),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         panel.border = element_rect(
@@ -236,14 +245,13 @@ dev.off()
 
 
 
-(ref:figc2) **Figure C2**: Herd-specific behavioral reaction norm testing the relationship between range-use ratio and mean-centered forage patch heterogeneity (i.e., Moran’s I). Each line represents an individual behavioral response to changes in forage patch heterogeneity and crossing of lines represents individual differences in plasticity, i.e., an Individual–Environment interaction. Note, herds are ordered from lowest to highest mean forage patch heterogeneity values, where negative values of reflect habitats where foraging resources are uniformly distributed, while positive values represent habitats where foraging resources are heterogeneously distributed.
-
-\captionsetup[figure]{labelformat=empty}
-
-![(ref:figc2)](../graphics/AppendixC/FigC2_KDE_BRN_byHerd.png)
+(ref:figs22) **Figure C2**: Herd-specific behavioral reaction norm testing the relationship between range-use ratio and mean-centered forage patch heterogeneity (i.e., Moran’s I). Each line represents an individual behavioral response to changes in forage patch heterogeneity and crossing of lines represents individual differences in plasticity, i.e., an Individual–Environment interaction. Note, herds are ordered from lowest to highest mean forage patch heterogeneity values, where negative values of reflect habitats where foraging resources are uniformly distributed, while positive values represent habitats where foraging resources are heterogeneously distributed.
 
 
-```{r figC3}
+![(ref:figs22)](../graphics/Supplement2/FigS2_2_KDE_BRN_byHerd.pdf)
+
+
+```{r}
 ## Behav Syndrome Covariances
 # manually check which row the individual blup data starts
 # Note, do not include blulps for fixed effects
@@ -258,13 +266,7 @@ covar = data.frame(int_FPT,int_KDE,slopes_FPT,slopes_KDE)
 colnames(covar) = c("int_FPT","int_KDE","slopes_FPT","slopes_KDE")
 
 
-png(
-    "graphics/AppendixC/FigC3_Behav_syndrome.png",
-    width = 4000,
-    height = 4000,
-    res = 500,
-    units = "px"
-)
+pdf("graphics/Supplement2/FigS2_3_Behav_syndrome.pdf")
 aa = ggplot(covar, aes(x = int_FPT, y = int_KDE)) +
     geom_point() +
     xlab("Intercept area-restricted search") +
@@ -272,9 +274,9 @@ aa = ggplot(covar, aes(x = int_FPT, y = int_KDE)) +
     ggtitle('A') +
     theme(
         legend.position = 'none',
-        axis.text = element_text(size = 8),
-        axis.title = element_text(size = 10),
-        strip.text = element_text(size = 8),
+        axis.text = element_text(size = textsize),
+        axis.title = element_text(size = textsize + 2),
+        strip.text = element_text(size = textsize),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         panel.border = element_rect(
@@ -291,9 +293,9 @@ bb = ggplot(covar, aes(x = slopes_FPT, y = slopes_KDE)) +
     ggtitle('B') +
     theme(
         legend.position = 'none',
-        axis.text = element_text(size = 8),
-        axis.title = element_text(size = 10),
-        strip.text = element_text(size = 8),
+        axis.text = element_text(size = textsize),
+        axis.title = element_text(size = textsize + 2),
+        strip.text = element_text(size = textsize),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         panel.border = element_rect(
@@ -310,9 +312,9 @@ cc = ggplot(covar, aes(x = int_FPT, y = slopes_FPT)) +
     ggtitle('C') +
     theme(
         legend.position = 'none',
-        axis.text = element_text(size = 8),
-        axis.title = element_text(size = 10),
-        strip.text = element_text(size = 8),
+        axis.text = element_text(size = textsize),
+        axis.title = element_text(size = textsize + 2),
+        strip.text = element_text(size = textsize),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         panel.border = element_rect(
@@ -329,9 +331,9 @@ dd = ggplot(covar, aes(x = int_KDE, y = slopes_KDE)) +
     ggtitle('D') +
     theme(
         legend.position = 'none',
-        axis.text = element_text(size = 8),
-        axis.title = element_text(size = 10),
-        strip.text = element_text(size = 8),
+        axis.text = element_text(size = textsize),
+        axis.title = element_text(size = textsize + 2),
+        strip.text = element_text(size = textsize),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         panel.border = element_rect(
@@ -348,17 +350,12 @@ dev.off()
 
 
 
-(ref:figc3) **Figure C3**: Phenotypic covariance for **A)** intercept-by-intercept covariance for first-passage time by range-use ratio; **B)** slope-by-slope covariance for first-passage time by range-use ratio; **C)** intercept-by-slope covariance for first-passage time; **D)** intercept-by-slope covariance for range-use ratio. Significance for each pairwise covariance measure was determined based on whether 95% credible intervals overlapped with zero. Results, including values of phenotypic covariance and credible intervals, are available in table 2 of the main text.
+(ref:FigS23) **Figure S2.3**: Phenotypic covariance for **A)** intercept-by-intercept covariance for first-passage time by range-use ratio; **B)** slope-by-slope covariance for first-passage time by range-use ratio; **C)** intercept-by-slope covariance for first-passage time; **D)** intercept-by-slope covariance for range-use ratio. Significance for each pairwise covariance measure was determined based on whether 95% credible intervals overlapped with zero. Results, including values of phenotypic covariance and credible intervals, are available in table 2 of the main text.
 
 
+![(ref:FigS23)](../graphics/Supplement2/FigS2_3_Behav_syndrome.pdf)
 
-\captionsetup[figure]{labelformat=empty}
-
-
-
-![(ref:figc3)](../graphics/AppendixC/FigC3_Behav_syndrome.png)
-
-\clearpage
+\newpage
 
 ### References
 
