@@ -9,6 +9,7 @@ header-includes:
     - \usepackage{caption}
     - \usepackage{booktabs}
     - \usepackage{mathpazo}
+    - \usepackage{indentfirst}
     - \usepackage{setspace}
     - \doublespacing
     - \usepackage{fancyhdr}
@@ -359,3 +360,6 @@ dev.off()
 
 ### References
 
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+\setlength{\parskip}{8pt}

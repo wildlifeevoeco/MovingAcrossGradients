@@ -10,6 +10,7 @@ header-includes:
     - \usepackage{booktabs}
     - \usepackage{mathpazo}
     - \usepackage{setspace}
+    - \usepackage{indentfirst}
     - \doublespacing
     - \usepackage{fancyhdr}
     - \pagestyle{fancy}
@@ -517,3 +518,7 @@ dev.off()
 \newpage
 
 ### References
+
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+\setlength{\parskip}{8pt}
