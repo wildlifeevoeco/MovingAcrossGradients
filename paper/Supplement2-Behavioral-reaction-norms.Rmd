@@ -198,7 +198,7 @@ dev.off()
 
 
 
-(ref:figs21) **Figure C1**: Herd-specific behavioral reaction norm testing the relationship between first-passage time and mean-centered forage patch heterogeneity (i.e., Moran’s I). Each line represents an individual behavioral response to changes in forage patch heterogeneity and crossing of lines represents individual differences in plasticity, i.e., an Individual – Environment interaction. Note, herds are ordered from lowest to highest mean forage patch heterogeneity values, where negative values of reflect habitats where foraging resources are uniformly distributed, while positive values represent habitats where foraging resources are heterogeneously distributed.
+(ref:figs21) **Figure S2.1**: Herd-specific behavioral reaction norm testing the relationship between first-passage time and mean-centered forage patch heterogeneity (i.e., Moran’s I). Each line represents an individual behavioral response to changes in forage patch heterogeneity and crossing of lines represents individual differences in plasticity, i.e., an Individual – Environment interaction. Note, herds are ordered from lowest to highest mean forage patch heterogeneity values, where negative values of reflect habitats where foraging resources are uniformly distributed, while positive values represent habitats where foraging resources are heterogeneously distributed.
 
 
 
@@ -245,7 +245,7 @@ dev.off()
 
 
 
-(ref:figs22) **Figure C2**: Herd-specific behavioral reaction norm testing the relationship between range-use ratio and mean-centered forage patch heterogeneity (i.e., Moran’s I). Each line represents an individual behavioral response to changes in forage patch heterogeneity and crossing of lines represents individual differences in plasticity, i.e., an Individual–Environment interaction. Note, herds are ordered from lowest to highest mean forage patch heterogeneity values, where negative values of reflect habitats where foraging resources are uniformly distributed, while positive values represent habitats where foraging resources are heterogeneously distributed.
+(ref:figs22) **Figure S2.2**: Herd-specific behavioral reaction norm testing the relationship between range-use ratio and mean-centered forage patch heterogeneity (i.e., Moran’s I). Each line represents an individual behavioral response to changes in forage patch heterogeneity and crossing of lines represents individual differences in plasticity, i.e., an Individual–Environment interaction. Note, herds are ordered from lowest to highest mean forage patch heterogeneity values, where negative values of reflect habitats where foraging resources are uniformly distributed, while positive values represent habitats where foraging resources are heterogeneously distributed.
 
 
 ![(ref:figs22)](../graphics/Supplement2/FigS2_2_KDE_BRN_byHerd.pdf)
