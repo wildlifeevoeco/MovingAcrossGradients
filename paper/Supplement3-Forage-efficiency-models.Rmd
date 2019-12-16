@@ -15,7 +15,7 @@ header-includes:
     - \pagestyle{fancy}
     - \setlength{\headheight}{16pt}
     - \captionsetup{labelformat=empty, font=singlespacing}
-    - \fancyhead[L]{\selectfont Moving across gradients.}
+    - \fancyhead[L]{\selectfont Moving across resource gradients.}
 bibliography: refs.bib
 csl: amnat.csl
 ---
